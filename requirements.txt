@@ -1,4 +1,6 @@
 ﻿package_name==0.1
 flask
 gunicorn
-
+joblib
+scikit-learn
+numpy
