@@ -1,0 +1,128 @@
+<html>
+<head>
+  <title>Diabetes Classifier Predicted by Om</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      margin-top: 20px;
+    }
+
+    form {
+      display: inline-block;
+      background: white;
+      padding: 40px;
+      margin-top: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 250px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: border 0.3s;
+    }
+
+    input[type="number"]:focus {
+      border-color: #6c63ff;
+      outline: none;
+    }
+
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin: 10px 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 20px;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #574b90;
+    }
+
+    h2 {
+      color: #222;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #444;
+      font-weight: normal;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Diabetes Classifier</h1>
+  <h2>Please Fill the Form</h2>
+
+  <form method="POST">
+    <label>Age</label>
+    <input type="number" step="0.01" name="age" placeholder="Enter Age" required min="1" />
+
+    <label>BMI</label>
+    <input type="number" step="0.01" name="bmi" placeholder="Enter BMI" required min="0.1" />
+
+    <label>Fasting Sugar</label>
+    <input type="number" step="0.01" name="fs" placeholder="Enter Fasting Sugar" required min="0.1" />
+
+    <label>HBA1C</label>
+    <input type="number" step="0.01" name="hb" placeholder="Enter HBA1C" required min="0.1" />
+
+    <label>Gender</label>
+    <input type="radio" name="ge" value="1" checked /> Female
+    <input type="radio" name="ge" value="2" /> Male
+
+    <label>Hyper Tension</label>
+    <input type="radio" name="hy" value="1" checked /> No
+    <input type="radio" name="hy" value="2" /> Yes
+
+    <label>Family History</label>
+    <input type="radio" name="fh" value="1" checked /> No
+    <input type="radio" name="fh" value="2" /> Yes
+
+    <br />
+    <input type="submit" />
+  </form>
+
+  <h2>{{ msg }}</h2>
+
+  <h3>Classifier can make mistake...Please consult your doctor</h3>
+</body>
+</html>
